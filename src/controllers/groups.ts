@@ -11,10 +11,10 @@ export async function createGroupinCognito(req:Request,res:Response) {
             response: result,
             message: "Group added in cognito"
         });
-    } catch (error) {
+    } catch (error:any) {
         console.log(error);
         res.status(500).json({
-            message: "something went wrong!"
+            message: error.message
         });
     }
 }
@@ -27,10 +27,13 @@ export async function addUserInCognitoGroup(req:Request,res:Response) {
             userName  : user_email
         }
         const result = await addUserIntoGroup(payload)
-    } catch (error) {
-        console.log(error);
+        res.status(200).json({
+            response: result,
+            message: "user added to group"
+        });
+    } catch (error:any) {
         res.status(500).json({
-            message: "something went wrong!"
+            message: error.message
         });
     }
 }

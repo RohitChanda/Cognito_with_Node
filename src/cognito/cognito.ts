@@ -61,7 +61,7 @@ export function createGroup(groupName:string){
             UserPoolId: poolData.UserPoolId
         },function(err,response){
             if(err){
-                reject(new Error(err.message))
+                reject(err)
             }else{
                 resolve(response)
             }
@@ -78,7 +78,7 @@ export function addUserIntoGroup( payload:AddUserINGroupPayload ){
             UserPoolId: poolData.UserPoolId
         },function(err,response){
             if(err){
-                reject(new Error(err.message))
+                reject(err)
             }else{
                 resolve(response)
             }
