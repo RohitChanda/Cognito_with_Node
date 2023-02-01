@@ -1,0 +1,2 @@
+npm i axios jwk-to-pem jsonwebtoken
+npm i --save-dev @types/jwk-to-pem
